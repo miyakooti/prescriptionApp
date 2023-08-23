@@ -1,3 +1,24 @@
-PODFILE CHECKSUM: 454b0d963326c3e371b6d113a829f4ed2eb56377
+PODS:
+  - Alamofire (5.7.1)
+  - Nuke (10.7.1)
+  - SVProgressHUD (2.2.5)
+
+DEPENDENCIES:
+  - Alamofire
+  - Nuke
+  - SVProgressHUD
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Nuke
+    - SVProgressHUD
+
+SPEC CHECKSUMS:
+  Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
+  Nuke: 279f17a599fd1c83cf51de5e0e1f2db143a287b0
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+
+PODFILE CHECKSUM: 9dca703658d499b1b4143af19148e64880dfa78f
 
 COCOAPODS: 1.11.3

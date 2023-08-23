@@ -7,9 +7,9 @@ target 'PhotoApp' do
 
   # Pods for PhotoApp
 #
-#pod "Alamofire"
-#pod "Nuke"
-#pod 'SVProgressHUD'
+pod "Alamofire"
+pod "Nuke"
+pod 'SVProgressHUD'
 #
 
 

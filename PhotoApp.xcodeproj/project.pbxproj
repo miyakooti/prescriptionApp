@@ -14,7 +14,7 @@
 		D1393F40285EFD9F0073981D /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1393F3F285EFD9F0073981D /* UIColor.swift */; };
 		D13FA81728581A9D0041FCD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13FA81628581A9D0041FCD0 /* AppDelegate.swift */; };
 		D13FA81928581A9D0041FCD0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13FA81828581A9D0041FCD0 /* SceneDelegate.swift */; };
-		D13FA81B28581A9D0041FCD0 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13FA81A28581A9D0041FCD0 /* SearchViewController.swift */; };
+		D13FA81B28581A9D0041FCD0 /* ReadQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13FA81A28581A9D0041FCD0 /* ReadQRViewController.swift */; };
 		D13FA81E28581A9D0041FCD0 /* MainTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13FA81C28581A9D0041FCD0 /* MainTabBar.storyboard */; };
 		D13FA82028581A9F0041FCD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D13FA81F28581A9F0041FCD0 /* Assets.xcassets */; };
 		D13FA82328581A9F0041FCD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13FA82128581A9F0041FCD0 /* LaunchScreen.storyboard */; };
@@ -35,7 +35,7 @@
 		D13FA81328581A9D0041FCD0 /* PhotoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D13FA81628581A9D0041FCD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D13FA81828581A9D0041FCD0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D13FA81A28581A9D0041FCD0 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		D13FA81A28581A9D0041FCD0 /* ReadQRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadQRViewController.swift; sourceTree = "<group>"; };
 		D13FA81D28581A9D0041FCD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainTabBar.storyboard; sourceTree = "<group>"; };
 		D13FA81F28581A9F0041FCD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D13FA82228581A9F0041FCD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 		D1D8F62F285DDFC900D66146 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				D13FA81A28581A9D0041FCD0 /* SearchViewController.swift */,
+				D13FA81A28581A9D0041FCD0 /* ReadQRViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -190,6 +190,7 @@
 				D13FA80F28581A9D0041FCD0 /* Sources */,
 				D13FA81028581A9D0041FCD0 /* Frameworks */,
 				D13FA81128581A9D0041FCD0 /* Resources */,
+				906B0205E231FDD2202A9315 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -269,6 +270,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		906B0205E231FDD2202A9315 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhotoApp/Pods-PhotoApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhotoApp/Pods-PhotoApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PhotoApp/Pods-PhotoApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -277,7 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1D8F646285DE47500D66146 /* JsonEncoder.swift in Sources */,
-				D13FA81B28581A9D0041FCD0 /* SearchViewController.swift in Sources */,
+				D13FA81B28581A9D0041FCD0 /* ReadQRViewController.swift in Sources */,
 				D1393F2E285ECA9C0073981D /* NotificationName.swift in Sources */,
 				D1D8F644285DE46B00D66146 /* NSObject.swift in Sources */,
 				D1393F35285ECEB80073981D /* String.swift in Sources */,
