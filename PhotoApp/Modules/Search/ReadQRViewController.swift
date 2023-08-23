@@ -6,8 +6,7 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftUI
+//import Alamofire
 import AVFoundation
 import SVProgressHUD
 
@@ -18,6 +17,7 @@ final class ReadQRViewController: UIViewController {
     @IBOutlet weak var caputureView: UIView!
     @IBOutlet weak var prescriptionLabel: UILabel!
     @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,15 +25,28 @@ final class ReadQRViewController: UIViewController {
         
         submitButton.addTarget(nil, action: #selector(submitButtonPressed), for: .touchUpInside)
         
+        titleLabel.isHidden = true
+        prescriptionLabel.isHidden = true
+        submitButton.isHidden = true
+        
     }
     
     @objc
     private func submitButtonPressed() {
-        // ここでprogress
         SVProgressHUD.show(withStatus: "送信中")
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            SVProgressHUD.dismiss()
+            SVProgressHUD.showSuccess(withStatus: "送信完了")
+            let vc = SelectInterviewDateViewController.loadStoryboard()
+            self.navigationController?.pushViewController(vc, animated: true)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                SVProgressHUD.dismiss()
+            }
+
+            
+
         }
+        
+        
     }
 
 }
@@ -100,6 +113,9 @@ extension ReadQRViewController: AVCaptureMetadataOutputObjectsDelegate {
                SVProgressHUD.dismiss()
            }
            
+           titleLabel.isHidden = false
+           prescriptionLabel.isHidden = false
+           submitButton.isHidden = false
        }
     }
     
