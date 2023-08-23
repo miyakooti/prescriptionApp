@@ -118,11 +118,13 @@
             </objects>
             <point key="canvasLocation" x="1776.8115942028987" y="795.53571428571422"/>
         </scene>
-        <!--Item-->
+        <!--QR読み込み-->
         <scene sceneID="DSc-yT-daT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pZd-nY-XNs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="qbE-Q0-6Da"/>
+                    <tabBarItem key="tabBarItem" title="QR読み込み" selectedImage="camera" catalog="system" id="qbE-Q0-6Da">
+                        <color key="badgeColor" systemColor="systemTealColor"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="b1l-V2-Hj7">
                         <rect key="frame" x="0.0" y="48" width="414" height="44"/>
@@ -139,6 +141,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="camera" catalog="system" width="128" height="93"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

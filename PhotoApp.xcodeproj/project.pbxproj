@@ -120,13 +120,13 @@
 			path = PhotoApp;
 			sourceTree = "<group>";
 		};
-		D1D8F62F285DDFC900D66146 /* Search */ = {
+		D1D8F62F285DDFC900D66146 /* ReadQRViewController */ = {
 			isa = PBXGroup;
 			children = (
 				C249FA302A95FA9C0057A4B2 /* SelectInterviewDate */,
 				D13FA81A28581A9D0041FCD0 /* ReadQRViewController.swift */,
 			);
-			path = Search;
+			path = ReadQRViewController;
 			sourceTree = "<group>";
 		};
 		D1D8F631285DDFFA00D66146 /* Entity */ = {
@@ -150,7 +150,7 @@
 				D1393F2B285EBEBC0073981D /* Config.swift */,
 				D1D8F634285DE02F00D66146 /* Launch */,
 				D1393F41285F07520073981D /* MainTabBar */,
-				D1D8F62F285DDFC900D66146 /* Search */,
+				D1D8F62F285DDFC900D66146 /* ReadQRViewController */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
