@@ -63,20 +63,46 @@
                                     <constraint firstAttribute="height" constant="1" id="Oh6-Of-u7c"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htw-tr-RXt">
-                                <rect key="frame" x="10" y="440" width="394" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="処方内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yk-kr-S8i">
+                                <rect key="frame" x="10" y="198" width="170" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="g2E-PL-at6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="42"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htw-tr-RXt">
+                                <rect key="frame" x="10" y="348" width="394" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGQ-YD-Bdz">
+                                <rect key="frame" x="107" y="448" width="200" height="100"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="L8W-zf-Pje"/>
+                                    <constraint firstAttribute="width" constant="200" id="aCC-83-SXI"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="送信する">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="35"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yO1-0n-2Va"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="SGQ-YD-Bdz" firstAttribute="centerX" secondItem="6zB-12-eWa" secondAttribute="centerX" id="6Wk-yl-sYq"/>
+                            <constraint firstItem="SGQ-YD-Bdz" firstAttribute="top" secondItem="Htw-tr-RXt" secondAttribute="bottom" constant="100" id="Gj0-Qt-8bR"/>
                             <constraint firstItem="Htw-tr-RXt" firstAttribute="leading" secondItem="yO1-0n-2Va" secondAttribute="leading" constant="10" id="KjB-He-OlP"/>
-                            <constraint firstItem="Htw-tr-RXt" firstAttribute="centerY" secondItem="6zB-12-eWa" secondAttribute="centerY" id="eeh-4m-hnu"/>
+                            <constraint firstItem="1yk-kr-S8i" firstAttribute="top" secondItem="yO1-0n-2Va" secondAttribute="top" constant="150" id="OeU-fY-CcG"/>
+                            <constraint firstItem="Htw-tr-RXt" firstAttribute="top" secondItem="1yk-kr-S8i" secondAttribute="bottom" constant="50" id="V7k-lb-GJ5"/>
                             <constraint firstItem="yO1-0n-2Va" firstAttribute="trailing" secondItem="Htw-tr-RXt" secondAttribute="trailing" constant="10" id="hgY-nK-eLd"/>
                             <constraint firstItem="b3y-Qe-RwO" firstAttribute="top" secondItem="yO1-0n-2Va" secondAttribute="top" id="iJH-fo-M29"/>
+                            <constraint firstItem="1yk-kr-S8i" firstAttribute="leading" secondItem="yO1-0n-2Va" secondAttribute="leading" constant="10" id="pJP-zd-yJ4"/>
                             <constraint firstItem="b3y-Qe-RwO" firstAttribute="leading" secondItem="yO1-0n-2Va" secondAttribute="leading" id="rVR-Kp-8cS"/>
                         </constraints>
                     </view>
@@ -84,6 +110,7 @@
                     <connections>
                         <outlet property="caputureView" destination="b3y-Qe-RwO" id="LkO-34-7Np"/>
                         <outlet property="prescriptionLabel" destination="Htw-tr-RXt" id="r2X-Qg-Nec"/>
+                        <outlet property="submitButton" destination="SGQ-YD-Bdz" id="arq-mn-iBY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e0V-sJ-Q0k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -95,6 +122,9 @@
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiarySystemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

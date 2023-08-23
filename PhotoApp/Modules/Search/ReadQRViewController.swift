@@ -9,17 +9,31 @@ import UIKit
 import Alamofire
 import SwiftUI
 import AVFoundation
+import SVProgressHUD
 
 final class ReadQRViewController: UIViewController {
     
     private let session = AVCaptureSession()
 
     @IBOutlet weak var caputureView: UIView!
-    
     @IBOutlet weak var prescriptionLabel: UILabel!
+    @IBOutlet weak var submitButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setUpCamera()
+        
+        submitButton.addTarget(nil, action: #selector(submitButtonPressed), for: .touchUpInside)
+        
+    }
+    
+    @objc
+    private func submitButtonPressed() {
+        // ここでprogress
+        SVProgressHUD.show(withStatus: "送信中")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            SVProgressHUD.dismiss()
+        }
     }
 
 }
@@ -27,6 +41,14 @@ final class ReadQRViewController: UIViewController {
 extension ReadQRViewController: AVCaptureMetadataOutputObjectsDelegate {
     
     private func setUpCamera() {
+        
+        SVProgressHUD.showSuccess(withStatus: "処方箋のQRを読み込んでください。")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            SVProgressHUD.dismiss()
+        }
+        
+        //TODO: ここlabelでいい
+        
         let discoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: .video, position: .back)
 
         let devices = discoverySession.devices
@@ -61,7 +83,7 @@ extension ReadQRViewController: AVCaptureMetadataOutputObjectsDelegate {
         session.startRunning()
     }
 
-    private func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+    internal func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
             
        for metadata in metadataObjects as! [AVMetadataMachineReadableCodeObject] {
            // QRのtype： metadata.type
@@ -72,6 +94,12 @@ extension ReadQRViewController: AVCaptureMetadataOutputObjectsDelegate {
            
            prescriptionLabel.text = value
            caputureView.isHidden = true
+           
+           SVProgressHUD.showSuccess(withStatus: "QRコードを読み取りました")
+           DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+               SVProgressHUD.dismiss()
+           }
+           
        }
     }
     
