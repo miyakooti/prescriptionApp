@@ -6,7 +6,6 @@
 //
 
 import UIKit
-//import Alamofire
 import AVFoundation
 import SVProgressHUD
 
@@ -14,21 +13,21 @@ final class ReadQRViewController: UIViewController {
     
     private let session = AVCaptureSession()
 
-    @IBOutlet weak var caputureView: UIView!
-    @IBOutlet weak var prescriptionLabel: UILabel!
-    @IBOutlet weak var submitButton: UIButton!
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet private weak var caputureView: UIView!
+    @IBOutlet private weak var prescriptionLabel: UILabel!
+    @IBOutlet private weak var submitButton: UIButton!
+    @IBOutlet private weak var titleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpCamera()
+        setUpViews()
         
+    }
+    
+    private func setUpViews() {
         submitButton.addTarget(nil, action: #selector(submitButtonPressed), for: .touchUpInside)
-        
-        titleLabel.isHidden = true
-        prescriptionLabel.isHidden = true
-        submitButton.isHidden = true
-        
+        hideViews(isHidden: true)
     }
     
     @objc
@@ -41,15 +40,19 @@ final class ReadQRViewController: UIViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 SVProgressHUD.dismiss()
             }
-
-            
-
         }
-        
-        
+    }
+    
+    private func hideViews(isHidden: Bool) {
+        titleLabel.isHidden = isHidden
+        prescriptionLabel.isHidden = isHidden
+        submitButton.isHidden = isHidden
     }
 
 }
+
+
+
 
 extension ReadQRViewController: AVCaptureMetadataOutputObjectsDelegate {
     
@@ -113,9 +116,7 @@ extension ReadQRViewController: AVCaptureMetadataOutputObjectsDelegate {
                SVProgressHUD.dismiss()
            }
            
-           titleLabel.isHidden = false
-           prescriptionLabel.isHidden = false
-           submitButton.isHidden = false
+           hideViews(isHidden: false)
        }
     }
     
