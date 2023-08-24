@@ -74,7 +74,9 @@ final class SelectInterviewDateViewController: UIViewController {
 
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 SVProgressHUD.dismiss()
+                NotificationCenter.default.post(name: .notifyName, object: nil)
                 self.navigationController?.popToRootViewController(animated: true)
+
             }
         }
     }
@@ -128,6 +130,7 @@ extension SelectInterviewDateViewController: UITableViewDelegate {
         selectedIndexPath = indexPath
         submitButton.isEnabled = true
         submitButton.backgroundColor = .systemTeal
+        selectedTime = reservations[indexPath.row].time
         
         tableView.reloadData()
     }
@@ -144,10 +147,13 @@ extension SelectInterviewDateViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PickDateTableViewCell.className, for: indexPath) as! PickDateTableViewCell
         
-        selectedTime = reservations[indexPath.row].time
         
         cell.configure(date: reservations[indexPath.row].time, isOpen: reservations[indexPath.row].isOpen, indexPath: indexPath, selectedIndexPath: selectedIndexPath)
     
         return cell
     }
+}
+
+extension Notification.Name {
+    static let notifyName = Notification.Name("changeTab")
 }

@@ -23,16 +23,23 @@ final class ReadQRViewController: UIViewController {
         super.viewDidLoad()
         setUpCamera()
         setUpViews()
-        SVProgressHUD.setBackgroundColor(UIColor.init(hex: "f1f1f1"))
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(switchTab), name: .notifyName, object: nil)
     }
     
     private func setUpViews() {
         submitButton.addTarget(nil, action: #selector(submitButtonPressed), for: .touchUpInside)
         hideViews(isHidden: true)
+        SVProgressHUD.setBackgroundColor(UIColor.init(hex: "f1f1f1"))
         self.navigationItem.title = "QR読み込み"
     }
     
+    @objc
+    private func switchTab() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+            self.tabBarController?.selectedIndex = 0
+        }
+    }
+
     @objc
     private func submitButtonPressed() {
         SVProgressHUD.show(withStatus: "送信中")
@@ -41,9 +48,6 @@ final class ReadQRViewController: UIViewController {
 
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 SVProgressHUD.dismiss()
-                
-//                self.showReserveAlert()
-                
                 let vc = SelectInterviewDateViewController.loadStoryboard()
                 self.navigationController?.pushViewController(vc, animated: true)
                 
