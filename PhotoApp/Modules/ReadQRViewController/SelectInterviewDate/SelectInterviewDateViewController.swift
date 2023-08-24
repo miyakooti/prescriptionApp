@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 final class SelectInterviewDateViewController: UIViewController {
 
@@ -17,6 +18,8 @@ final class SelectInterviewDateViewController: UIViewController {
     
     var selectedIndexPath: IndexPath?
     @IBOutlet weak var dateLabel: UILabel!
+    
+    var selectedTime = ""
     
 
     
@@ -90,7 +93,11 @@ final class SelectInterviewDateViewController: UIViewController {
         loadVisiblePages()
         
         submitButton.isEnabled = false
+        
+        
+        submitButton.addTarget(nil, action: #selector(showConfirmationAlert), for: .touchUpInside)
 
+        submitButton.backgroundColor = .lightGray
         // Do any additional setup after loading the view.
     }
     
@@ -118,6 +125,37 @@ final class SelectInterviewDateViewController: UIViewController {
         loadPage(currentPage - 1)
         
         dateLabel.text = dates[currentPage]
+    }
+    
+    @objc
+    private func showConfirmationAlert() {
+        let pageWidth = scrollView.frame.size.width
+
+        let currentPage = Int(scrollView.contentOffset.x / pageWidth)
+        let alert = UIAlertController(title: "\(dates[currentPage]) \n\(selectedTime)", message: "この日程でよろしいですか？", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "はい", style: .default) { (action) in
+            self.dismiss(animated: true, completion: nil)
+            
+            SVProgressHUD.show(withStatus: "予約処理中")
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                SVProgressHUD.showSuccess(withStatus: "予約が確定しました。")
+
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    SVProgressHUD.dismiss()
+                    self.navigationController?.popToRootViewController(animated: true)
+                    
+
+                }
+            }
+
+        }
+        let cancel = UIAlertAction(title: "いいえ", style: .cancel) { (acrion) in
+            self.dismiss(animated: true, completion: nil)
+        }
+        alert.addAction(ok)
+        alert.addAction(cancel)
+
+        self.present(alert, animated: true, completion: nil)
     }
     
 
@@ -155,14 +193,17 @@ extension SelectInterviewDateViewController: UITableViewDelegate, UITableViewDat
         cell.dateLabel.text = reservations[indexPath.row].time
         
         if !reservations[indexPath.row].isOpen {
-//            あいてないのでセルを無効化
+//            //TODO: あいてないのでセルを無効化
         }
         
         if indexPath == selectedIndexPath {
             cell.checkImage.image = UIImage(systemName: "checkmark.circle.fill")
+            selectedTime = reservations[indexPath.row].time
         } else {
             cell.checkImage.image = UIImage(systemName: "circle")
         }
+        
+        
         
     
         return cell
@@ -173,6 +214,10 @@ extension SelectInterviewDateViewController: UITableViewDelegate, UITableViewDat
         guard let selectedCell = tableView.cellForRow(at: indexPath) as? PickDateTableViewCell else { return }
         selectedIndexPath = indexPath
         submitButton.isEnabled = true
+        submitButton.backgroundColor = .systemTeal
+
+        
+        
 
         tableView.reloadData()
     }

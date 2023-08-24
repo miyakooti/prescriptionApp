@@ -47,7 +47,10 @@ final class ReadQRViewController: UIViewController {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 SVProgressHUD.dismiss()
                 
-                self.showReserveAlert()
+//                self.showReserveAlert()
+                
+                let vc = SelectInterviewDateViewController.loadStoryboard()
+                self.navigationController?.pushViewController(vc, animated: true)
                 
 
             }
@@ -65,8 +68,7 @@ final class ReadQRViewController: UIViewController {
         let alert = UIAlertController(title: "続けて面談日程を予約しますか？", message: nil, preferredStyle: .alert)
         let ok = UIAlertAction(title: "はい", style: .default) { (action) in
             self.dismiss(animated: true, completion: nil)
-            let vc = SelectInterviewDateViewController.loadStoryboard()
-            self.navigationController?.pushViewController(vc, animated: true)
+            
         }
         let cancel = UIAlertAction(title: "いいえ", style: .cancel) { (acrion) in
             self.dismiss(animated: true, completion: nil)
