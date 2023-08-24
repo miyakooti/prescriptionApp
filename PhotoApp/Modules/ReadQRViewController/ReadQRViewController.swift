@@ -36,7 +36,7 @@ final class ReadQRViewController: UIViewController {
     @objc
     private func submitButtonPressed() {
         SVProgressHUD.show(withStatus: "送信中")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
             SVProgressHUD.showSuccess(withStatus: "送信完了")
 
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {

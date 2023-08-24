@@ -15,7 +15,6 @@
 		C249FA3D2A962E920057A4B2 /* PickDateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C249FA3B2A962E920057A4B2 /* PickDateTableViewCell.xib */; };
 		C249FA402A962F400057A4B2 /* ReservationSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = C249FA3F2A962F400057A4B2 /* ReservationSlot.swift */; };
 		C2C098192A96F119007B3069 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C098182A96F119007B3069 /* Constants.swift */; };
-		D1393F2C285EBEBC0073981D /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1393F2B285EBEBC0073981D /* Config.swift */; };
 		D1393F2E285ECA9C0073981D /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1393F2D285ECA9C0073981D /* NotificationName.swift */; };
 		D1393F35285ECEB80073981D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1393F34285ECEB80073981D /* String.swift */; };
 		D1393F37285ED1E90073981D /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1393F36285ED1E90073981D /* UIImageView.swift */; };
@@ -27,7 +26,6 @@
 		D13FA82028581A9F0041FCD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D13FA81F28581A9F0041FCD0 /* Assets.xcassets */; };
 		D13FA82328581A9F0041FCD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13FA82128581A9F0041FCD0 /* LaunchScreen.storyboard */; };
 		D1D8F644285DE46B00D66146 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D8F643285DE46B00D66146 /* NSObject.swift */; };
-		D1D8F646285DE47500D66146 /* JsonEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D8F645285DE47500D66146 /* JsonEncoder.swift */; };
 		D1D8F648285DEA0000D66146 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D8F647285DEA0000D66146 /* UIViewControllerExtension.swift */; };
 		EBDEB2214A7A9A7E2C472725 /* Pods_PhotoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B739303C93D23C3FBE6FF173 /* Pods_PhotoApp.framework */; };
 /* End PBXBuildFile section */
@@ -43,7 +41,6 @@
 		C249FA3B2A962E920057A4B2 /* PickDateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickDateTableViewCell.xib; sourceTree = "<group>"; };
 		C249FA3F2A962F400057A4B2 /* ReservationSlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationSlot.swift; sourceTree = "<group>"; };
 		C2C098182A96F119007B3069 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		D1393F2B285EBEBC0073981D /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		D1393F2D285ECA9C0073981D /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		D1393F34285ECEB80073981D /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		D1393F36285ED1E90073981D /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
@@ -57,7 +54,6 @@
 		D13FA82228581A9F0041FCD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D13FA82428581A9F0041FCD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1D8F643285DE46B00D66146 /* NSObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
-		D1D8F645285DE47500D66146 /* JsonEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonEncoder.swift; sourceTree = "<group>"; };
 		D1D8F647285DEA0000D66146 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		D28D7DC69BF07DD8FBDAA98C /* Pods-PhotoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoApp.debug.xcconfig"; path = "Target Support Files/Pods-PhotoApp/Pods-PhotoApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,7 +175,6 @@
 		D1D8F633285DE01900D66146 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				D1393F2B285EBEBC0073981D /* Config.swift */,
 				C249FA352A9627850057A4B2 /* Home */,
 				D1D8F634285DE02F00D66146 /* Launch */,
 				D1393F41285F07520073981D /* MainTabBar */,
@@ -199,7 +194,6 @@
 		D1D8F641285DE3F700D66146 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				D1D8F645285DE47500D66146 /* JsonEncoder.swift */,
 				D1D8F642285DE44900D66146 /* Extensions */,
 				C2C098182A96F119007B3069 /* Constants.swift */,
 			);
@@ -345,7 +339,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1D8F646285DE47500D66146 /* JsonEncoder.swift in Sources */,
 				D13FA81B28581A9D0041FCD0 /* ReadQRViewController.swift in Sources */,
 				D1393F2E285ECA9C0073981D /* NotificationName.swift in Sources */,
 				D1D8F644285DE46B00D66146 /* NSObject.swift in Sources */,
@@ -353,7 +346,6 @@
 				D1393F40285EFD9F0073981D /* UIColor.swift in Sources */,
 				C249FA3C2A962E920057A4B2 /* PickDateTableViewCell.swift in Sources */,
 				C2C098192A96F119007B3069 /* Constants.swift in Sources */,
-				D1393F2C285EBEBC0073981D /* Config.swift in Sources */,
 				D13FA81728581A9D0041FCD0 /* AppDelegate.swift in Sources */,
 				C249FA322A95FB1A0057A4B2 /* SelectInterviewDateViewController.swift in Sources */,
 				D13FA81928581A9D0041FCD0 /* SceneDelegate.swift in Sources */,

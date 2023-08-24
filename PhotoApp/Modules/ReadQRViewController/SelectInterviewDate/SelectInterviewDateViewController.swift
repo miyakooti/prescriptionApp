@@ -69,7 +69,7 @@ final class SelectInterviewDateViewController: UIViewController {
     
     private func processReservation() {
         SVProgressHUD.show(withStatus: "予約処理中")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
             SVProgressHUD.showSuccess(withStatus: "予約が確定しました。")
 
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
