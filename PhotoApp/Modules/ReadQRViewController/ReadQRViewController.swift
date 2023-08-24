@@ -13,22 +13,17 @@ final class ReadQRViewController: UIViewController {
     
     private let session = AVCaptureSession()
     
-    
-
     @IBOutlet private weak var caputureView: UIView!
     @IBOutlet private weak var prescriptionLabel: UILabel!
     @IBOutlet private weak var submitButton: UIButton!
     @IBOutlet private weak var titleLabel: UILabel!
-    
-    @IBOutlet weak var tutorialLabel: UILabel!
+    @IBOutlet private weak var tutorialLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpCamera()
         setUpViews()
-        
         SVProgressHUD.setBackgroundColor(UIColor.init(hex: "f1f1f1"))
-
         
     }
     
@@ -83,24 +78,15 @@ final class ReadQRViewController: UIViewController {
 
 
 
-
+// QR関連の処理
 extension ReadQRViewController: AVCaptureMetadataOutputObjectsDelegate {
     
     private func setUpCamera() {
-                
-//        SVProgressHUD.show(withStatus: "処方箋のQRを読み込んでください。")
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-//            SVProgressHUD.dismiss()
-//        }
-        
-        //TODO: ここlabelでいい
         
         let discoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: .video, position: .back)
-
         let devices = discoverySession.devices
         if let backCamera = devices.first {
            do {
-              // カメラでQRの読み取りに成功した時の処理
               let deviceInput = try AVCaptureDeviceInput(device: backCamera)
               doInit(deviceInput: deviceInput)
            } catch {
@@ -120,7 +106,6 @@ extension ReadQRViewController: AVCaptureMetadataOutputObjectsDelegate {
         metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
         metadataOutput.metadataObjectTypes = [.qr]
         
-        // カメラを起動
         let previewLayer = AVCaptureVideoPreviewLayer(session: session)
         previewLayer.frame = view.bounds
         previewLayer.videoGravity = .resizeAspectFill
@@ -132,12 +117,10 @@ extension ReadQRViewController: AVCaptureMetadataOutputObjectsDelegate {
     internal func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
             
        for metadata in metadataObjects as! [AVMetadataMachineReadableCodeObject] {
-           // QRのtype： metadata.type
-           // QRの中身： metadata.stringValue
+
            guard let value = metadata.stringValue else { return }
                 
            session.stopRunning()
-           
            prescriptionLabel.text = value
            caputureView.isHidden = true
            
