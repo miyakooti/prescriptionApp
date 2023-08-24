@@ -13,7 +13,8 @@ final class SelectInterviewDateViewController: UIViewController {
     @IBOutlet private weak var scrollView: UIScrollView!
     @IBOutlet private weak var submitButton: UIButton!
     @IBOutlet private weak var dateLabel: UILabel!
-
+    @IBOutlet private weak var laterButton: UIButton!
+    
     private var pageViews: [UITableView?] = []
     private var selectedIndexPath: IndexPath?
     private var selectedTime = ""
@@ -43,6 +44,9 @@ final class SelectInterviewDateViewController: UIViewController {
         
         submitButton.isEnabled = false
         submitButton.backgroundColor = .lightGray
+        submitButton.circle()
+        laterButton.circle()
+        
     }
     
     @objc

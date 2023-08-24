@@ -18,19 +18,21 @@ final class ReadQRViewController: UIViewController {
     @IBOutlet private weak var submitButton: UIButton!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var tutorialLabel: UILabel!
+    @IBOutlet private weak var tryangleLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpCamera()
         setUpViews()
+        submitButton.addTarget(nil, action: #selector(submitButtonPressed), for: .touchUpInside)
         NotificationCenter.default.addObserver(self, selector: #selector(switchTab), name: .notifyName, object: nil)
     }
     
     private func setUpViews() {
-        submitButton.addTarget(nil, action: #selector(submitButtonPressed), for: .touchUpInside)
+        submitButton.circle()
         hideViews(isHidden: true)
         SVProgressHUD.setBackgroundColor(UIColor.init(hex: "f1f1f1"))
-        self.navigationItem.title = "QR読み込み"
+        self.navigationItem.title = "処方箋アップロード"
     }
     
     @objc
@@ -61,6 +63,7 @@ final class ReadQRViewController: UIViewController {
         prescriptionLabel.isHidden = isHidden
         submitButton.isHidden = isHidden
         tutorialLabel.isHidden = !isHidden
+        tryangleLabel.isHidden = isHidden
     }
     
     private func showReserveAlert() {

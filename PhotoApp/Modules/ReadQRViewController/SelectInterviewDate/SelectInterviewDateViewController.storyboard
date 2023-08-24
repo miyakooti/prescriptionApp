@@ -89,6 +89,7 @@
                     </view>
                     <connections>
                         <outlet property="dateLabel" destination="kfa-pL-4LK" id="i1R-TC-LHz"/>
+                        <outlet property="laterButton" destination="fUW-vF-Q5b" id="DvS-zv-pha"/>
                         <outlet property="scrollView" destination="k2H-wZ-bpH" id="V9c-l1-CEK"/>
                         <outlet property="submitButton" destination="RCB-wz-p7B" id="Ti6-Cp-aTz"/>
                     </connections>
