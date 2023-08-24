@@ -17,6 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="medicine" translatesAutoresizingMaskIntoConstraints="NO" id="vUf-bd-ARs">
+                                <rect key="frame" x="0.0" y="48" width="414" height="765"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ホーム画面" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJE-vk-MaN">
                                 <rect key="frame" x="25" y="73" width="212" height="100"/>
                                 <constraints>
@@ -26,12 +29,24 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="処方箋アプリへようこそ！" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUp-Qh-TDC">
+                                <rect key="frame" x="67" y="615.5" width="280" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="bJE-vk-MaN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="7Nc-Ip-H7u"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SUp-Qh-TDC" secondAttribute="bottom" constant="170" id="Wl2-fs-ikS"/>
+                            <constraint firstItem="SUp-Qh-TDC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="a61-H6-Nji"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vUf-bd-ARs" secondAttribute="bottom" id="dui-7U-1Tq"/>
                             <constraint firstItem="bJE-vk-MaN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="kuh-uj-83Q"/>
+                            <constraint firstItem="vUf-bd-ARs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lqg-Xe-EGU"/>
+                            <constraint firstItem="vUf-bd-ARs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pbg-vb-Bb8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vUf-bd-ARs" secondAttribute="trailing" id="vKy-Vc-cU3"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="ホーム" image="homekit" catalog="system" selectedImage="homekit" id="Uwj-8T-PcG">
@@ -156,6 +171,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.34999999403953552" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="medicine" translatesAutoresizingMaskIntoConstraints="NO" id="44i-9V-iIk">
+                                <rect key="frame" x="0.0" y="48" width="414" height="765"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="予約履歴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIP-rC-phl">
                                 <rect key="frame" x="25" y="73" width="169.5" height="100"/>
                                 <constraints>
@@ -165,19 +183,79 @@
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dq6-Ee-r79">
+                                <rect key="frame" x="0.0" y="215" width="414" height="128"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="・" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RN4-6q-6EJ">
+                                        <rect key="frame" x="15" y="36.5" width="54.5" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="2MR-Od-fDZ"/>
+                                            <constraint firstAttribute="width" constant="54.5" id="yOl-Mv-l2Z"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="54"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZTC-wW-9pe">
+                                        <rect key="frame" x="68" y="37" width="219.5" height="54"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="【9/1 17:00 ~ 17:45】" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zci-mc-iwS">
+                                                <rect key="frame" x="0.0" y="0.0" width="219.5" height="27.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="・ホスミシン錠500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCV-2L-tPN">
+                                                <rect key="frame" x="0.0" y="27.5" width="219.5" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="▶︎" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gX-7D-2rF">
+                                        <rect key="frame" x="344" y="32" width="45" height="64"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="45" id="Y1c-Q5-AE6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="54"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="RN4-6q-6EJ" firstAttribute="centerY" secondItem="dq6-Ee-r79" secondAttribute="centerY" id="25W-EY-adf"/>
+                                    <constraint firstItem="8gX-7D-2rF" firstAttribute="centerY" secondItem="dq6-Ee-r79" secondAttribute="centerY" id="EM3-5o-UAs"/>
+                                    <constraint firstItem="8gX-7D-2rF" firstAttribute="leading" secondItem="ZTC-wW-9pe" secondAttribute="trailing" constant="56.5" id="KSX-42-ZpH"/>
+                                    <constraint firstAttribute="trailing" secondItem="8gX-7D-2rF" secondAttribute="trailing" constant="25" id="LGx-fD-kGD"/>
+                                    <constraint firstItem="ZTC-wW-9pe" firstAttribute="centerY" secondItem="dq6-Ee-r79" secondAttribute="centerY" id="eeT-Z5-YIS"/>
+                                    <constraint firstAttribute="height" constant="128" id="iec-vY-FJU"/>
+                                    <constraint firstItem="8gX-7D-2rF" firstAttribute="top" secondItem="dq6-Ee-r79" secondAttribute="top" constant="32" id="lwl-iF-jWg"/>
+                                    <constraint firstItem="RN4-6q-6EJ" firstAttribute="centerY" secondItem="dq6-Ee-r79" secondAttribute="centerY" id="qJf-kQ-9bk"/>
+                                    <constraint firstItem="RN4-6q-6EJ" firstAttribute="leading" secondItem="dq6-Ee-r79" secondAttribute="leading" constant="15" id="w2s-8e-iCp"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NQG-9J-zmw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="44i-9V-iIk" firstAttribute="leading" secondItem="NQG-9J-zmw" secondAttribute="leading" id="C7C-xh-utN"/>
+                            <constraint firstItem="44i-9V-iIk" firstAttribute="trailing" secondItem="NQG-9J-zmw" secondAttribute="trailing" id="DlX-2u-nWI"/>
+                            <constraint firstItem="dq6-Ee-r79" firstAttribute="centerX" secondItem="ljz-I5-8qK" secondAttribute="centerX" id="Dtf-mP-BIC"/>
+                            <constraint firstItem="44i-9V-iIk" firstAttribute="top" secondItem="NQG-9J-zmw" secondAttribute="top" id="MrC-7f-faT"/>
                             <constraint firstItem="IIP-rC-phl" firstAttribute="leading" secondItem="NQG-9J-zmw" secondAttribute="leading" constant="25" id="Ypy-0M-8LX"/>
                             <constraint firstItem="IIP-rC-phl" firstAttribute="top" secondItem="NQG-9J-zmw" secondAttribute="top" constant="25" id="iJx-VW-UaB"/>
+                            <constraint firstItem="dq6-Ee-r79" firstAttribute="top" secondItem="IIP-rC-phl" secondAttribute="bottom" constant="42" id="kFd-hd-gQh"/>
+                            <constraint firstItem="dq6-Ee-r79" firstAttribute="leading" secondItem="NQG-9J-zmw" secondAttribute="leading" id="mud-9B-4H0"/>
+                            <constraint firstItem="NQG-9J-zmw" firstAttribute="bottom" secondItem="44i-9V-iIk" secondAttribute="bottom" id="pcd-RQ-KVr"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="予約履歴" image="list.bullet.clipboard" catalog="system" id="pFZ-2l-g20"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="raK-MT-Fa0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32" y="796"/>
+            <point key="canvasLocation" x="31.884057971014496" y="795.53571428571422"/>
         </scene>
         <!--QR読み込み-->
         <scene sceneID="DSc-yT-daT">
@@ -205,6 +283,7 @@
         <image name="camera" catalog="system" width="128" height="93"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
         <image name="list.bullet.clipboard" catalog="system" width="103" height="128"/>
+        <image name="medicine" width="800" height="600"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
