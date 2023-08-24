@@ -14,6 +14,7 @@
 		C249FA3C2A962E920057A4B2 /* PickDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C249FA3A2A962E920057A4B2 /* PickDateTableViewCell.swift */; };
 		C249FA3D2A962E920057A4B2 /* PickDateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C249FA3B2A962E920057A4B2 /* PickDateTableViewCell.xib */; };
 		C249FA402A962F400057A4B2 /* ReservationSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = C249FA3F2A962F400057A4B2 /* ReservationSlot.swift */; };
+		C2C098192A96F119007B3069 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C098182A96F119007B3069 /* Constants.swift */; };
 		D1393F2C285EBEBC0073981D /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1393F2B285EBEBC0073981D /* Config.swift */; };
 		D1393F2E285ECA9C0073981D /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1393F2D285ECA9C0073981D /* NotificationName.swift */; };
 		D1393F35285ECEB80073981D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1393F34285ECEB80073981D /* String.swift */; };
@@ -41,6 +42,7 @@
 		C249FA3A2A962E920057A4B2 /* PickDateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickDateTableViewCell.swift; sourceTree = "<group>"; };
 		C249FA3B2A962E920057A4B2 /* PickDateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickDateTableViewCell.xib; sourceTree = "<group>"; };
 		C249FA3F2A962F400057A4B2 /* ReservationSlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationSlot.swift; sourceTree = "<group>"; };
+		C2C098182A96F119007B3069 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D1393F2B285EBEBC0073981D /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		D1393F2D285ECA9C0073981D /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		D1393F34285ECEB80073981D /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			children = (
 				D1D8F645285DE47500D66146 /* JsonEncoder.swift */,
 				D1D8F642285DE44900D66146 /* Extensions */,
+				C2C098182A96F119007B3069 /* Constants.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				D1393F35285ECEB80073981D /* String.swift in Sources */,
 				D1393F40285EFD9F0073981D /* UIColor.swift in Sources */,
 				C249FA3C2A962E920057A4B2 /* PickDateTableViewCell.swift in Sources */,
+				C2C098192A96F119007B3069 /* Constants.swift in Sources */,
 				D1393F2C285EBEBC0073981D /* Config.swift in Sources */,
 				D13FA81728581A9D0041FCD0 /* AppDelegate.swift in Sources */,
 				C249FA322A95FB1A0057A4B2 /* SelectInterviewDateViewController.swift in Sources */,
@@ -509,7 +513,7 @@
 				DEVELOPMENT_TEAM = HDB7A739SH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PhotoApp/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "推しコレ";
+				INFOPLIST_KEY_CFBundleDisplayName = "処方箋アプリ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = MainTabBar;
@@ -540,7 +544,7 @@
 				DEVELOPMENT_TEAM = HDB7A739SH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PhotoApp/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "推しコレ";
+				INFOPLIST_KEY_CFBundleDisplayName = "処方箋アプリ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = MainTabBar;
