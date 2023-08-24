@@ -144,15 +144,9 @@ extension SelectInterviewDateViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PickDateTableViewCell.className, for: indexPath) as! PickDateTableViewCell
         
-        cell.selectionStyle = .none
-        cell.dateLabel.text = reservations[indexPath.row].time
+        selectedTime = reservations[indexPath.row].time
         
-        if indexPath == selectedIndexPath {
-            cell.checkImage.image = UIImage(systemName: "checkmark.circle.fill")
-            selectedTime = reservations[indexPath.row].time
-        } else {
-            cell.checkImage.image = UIImage(systemName: "circle")
-        }
+        cell.configure(date: reservations[indexPath.row].time, isOpen: reservations[indexPath.row].isOpen, indexPath: indexPath, selectedIndexPath: selectedIndexPath)
     
         return cell
     }
