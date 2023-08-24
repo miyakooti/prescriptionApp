@@ -27,22 +27,22 @@ final class SelectInterviewDateViewController: UIViewController {
         ReservationSlot(time: "9:05 ~ 9:10", isOpen: true),
         ReservationSlot(time: "9:15 ~ 9:20", isOpen: true),
         ReservationSlot(time: "9:30 ~ 9:35", isOpen: true),
-        ReservationSlot(time: "9:45 ~ 9:50", isOpen: true),
+//        ReservationSlot(time: "9:45 ~ 9:50", isOpen: true),
         ReservationSlot(time: "10:05 ~ 10:10", isOpen: true),
         ReservationSlot(time: "10:15 ~ 10:20", isOpen: true),
         ReservationSlot(time: "10:30 ~ 10:35", isOpen: true),
-        ReservationSlot(time: "10:45 ~ 10:50", isOpen: true),
+//        ReservationSlot(time: "10:45 ~ 10:50", isOpen: true),
         ReservationSlot(time: "11:05 ~ 11:10", isOpen: true),
         ReservationSlot(time: "11:15 ~ 11:20", isOpen: true),
         ReservationSlot(time: "11:30 ~ 11:35", isOpen: true),
         ReservationSlot(time: "11:45 ~ 11:50", isOpen: true),
-        ReservationSlot(time: "12:05 ~ 12:10", isOpen: true),
-        ReservationSlot(time: "12:15 ~ 12:20", isOpen: true),
-        ReservationSlot(time: "12:30 ~ 12:35", isOpen: true),
-        ReservationSlot(time: "12:45 ~ 12:50", isOpen: true),
+//        ReservationSlot(time: "12:05 ~ 12:10", isOpen: true),
+//        ReservationSlot(time: "12:15 ~ 12:20", isOpen: true),
+//        ReservationSlot(time: "12:30 ~ 12:35", isOpen: true),
+//        ReservationSlot(time: "12:45 ~ 12:50", isOpen: true),
         ReservationSlot(time: "13:05 ~ 13:10", isOpen: true),
         ReservationSlot(time: "13:15 ~ 13:20", isOpen: true),
-        ReservationSlot(time: "13:30 ~ 13:35", isOpen: true),
+//        ReservationSlot(time: "13:30 ~ 13:35", isOpen: true),
         ReservationSlot(time: "13:45 ~ 13:50", isOpen: true),
         ReservationSlot(time: "14:05 ~ 14:10", isOpen: true),
         ReservationSlot(time: "14:15 ~ 14:20", isOpen: true),
@@ -51,7 +51,7 @@ final class SelectInterviewDateViewController: UIViewController {
         ReservationSlot(time: "15:05 ~ 15:10", isOpen: true),
         ReservationSlot(time: "15:15 ~ 15:20", isOpen: true),
         ReservationSlot(time: "15:30 ~ 15:35", isOpen: true),
-        ReservationSlot(time: "15:45 ~ 15:50", isOpen: true),
+//        ReservationSlot(time: "15:45 ~ 15:50", isOpen: true),
         ReservationSlot(time: "16:05 ~ 16:10", isOpen: true),
         ReservationSlot(time: "16:15 ~ 16:20", isOpen: true),
         ReservationSlot(time: "16:30 ~ 16:35", isOpen: true),
@@ -193,7 +193,7 @@ extension SelectInterviewDateViewController: UITableViewDelegate, UITableViewDat
         cell.dateLabel.text = reservations[indexPath.row].time
         
         if !reservations[indexPath.row].isOpen {
-//            //TODO: あいてないのでセルを無効化
+            cell.checkImage.isHidden = true
         }
         
         if indexPath == selectedIndexPath {
@@ -203,7 +203,7 @@ extension SelectInterviewDateViewController: UITableViewDelegate, UITableViewDat
             cell.checkImage.image = UIImage(systemName: "circle")
         }
         
-        
+
         
     
         return cell

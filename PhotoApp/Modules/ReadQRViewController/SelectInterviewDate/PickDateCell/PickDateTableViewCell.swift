@@ -16,6 +16,7 @@ class PickDateTableViewCell: UITableViewCell {
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var checkImage: UIImageView!
+    @IBOutlet weak var backView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
