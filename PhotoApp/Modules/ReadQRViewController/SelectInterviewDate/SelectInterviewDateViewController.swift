@@ -24,6 +24,7 @@ final class SelectInterviewDateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.delegate = self
+        submitButton.addTarget(nil, action: #selector(showConfirmationAlert), for: .touchUpInside)
         setUpViews()
 
     }
@@ -41,7 +42,6 @@ final class SelectInterviewDateViewController: UIViewController {
         loadVisiblePages()
         
         submitButton.isEnabled = false
-        submitButton.addTarget(nil, action: #selector(showConfirmationAlert), for: .touchUpInside)
         submitButton.backgroundColor = .lightGray
     }
     
@@ -114,16 +114,33 @@ extension SelectInterviewDateViewController: UIScrollViewDelegate {
     }
 }
 
-extension SelectInterviewDateViewController: UITableViewDelegate, UITableViewDataSource{
+
+
+extension SelectInterviewDateViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let selectedCell = tableView.cellForRow(at: indexPath) as? PickDateTableViewCell else { return }
+        selectedIndexPath = indexPath
+        submitButton.isEnabled = true
+        submitButton.backgroundColor = .systemTeal
+        
+        tableView.reloadData()
+    }
+    
+}
+
+
+extension SelectInterviewDateViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return reservations.count
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44
-    }
-
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PickDateTableViewCell.className, for: indexPath) as! PickDateTableViewCell
         
@@ -139,16 +156,4 @@ extension SelectInterviewDateViewController: UITableViewDelegate, UITableViewDat
     
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        guard let selectedCell = tableView.cellForRow(at: indexPath) as? PickDateTableViewCell else { return }
-        selectedIndexPath = indexPath
-        submitButton.isEnabled = true
-        submitButton.backgroundColor = .systemTeal
-        
-        tableView.reloadData()
-
-    }
-    
 }
