@@ -16,18 +16,78 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u58-Aj-xjS">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k2H-wZ-bpH">
+                                        <rect key="frame" x="0.0" y="95" width="393" height="500"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <viewLayoutGuide key="contentLayoutGuide" id="YEt-KK-c8j"/>
+                                        <viewLayoutGuide key="frameLayoutGuide" id="enM-e9-nrB"/>
+                                    </scrollView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCB-wz-p7B">
+                                        <rect key="frame" x="157" y="699" width="79" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="3n4-bS-Kr1"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="送信">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="27"/>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="RCB-wz-p7B" secondAttribute="bottom" constant="10" id="9sx-re-Pmc"/>
+                                    <constraint firstItem="RCB-wz-p7B" firstAttribute="centerX" secondItem="u58-Aj-xjS" secondAttribute="centerX" id="hic-7S-PkD"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="希望面談日程を選択してください。" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ymp-SB-T5d">
+                                <rect key="frame" x="57.666666666666657" y="69" width="278" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2023/08/23" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfa-pL-4LK">
+                                <rect key="frame" x="14.999999999999993" y="110" width="125.33333333333331" height="26.333333333333343"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ymp-SB-T5d" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="3hy-Zm-g9C"/>
+                            <constraint firstItem="kfa-pL-4LK" firstAttribute="top" secondItem="Ymp-SB-T5d" secondAttribute="bottom" constant="20" id="72h-EZ-tMg"/>
+                            <constraint firstItem="Ymp-SB-T5d" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Ia8-yE-hvR"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="u58-Aj-xjS" secondAttribute="bottom" id="cJ7-i8-OGj"/>
+                            <constraint firstItem="u58-Aj-xjS" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="fDa-h2-vtt"/>
+                            <constraint firstAttribute="trailing" secondItem="u58-Aj-xjS" secondAttribute="trailing" id="fu5-j6-0om"/>
+                            <constraint firstItem="kfa-pL-4LK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="o8U-MM-GC1"/>
+                            <constraint firstItem="u58-Aj-xjS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="rw4-Ce-a0m"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="kfa-pL-4LK" id="i1R-TC-LHz"/>
+                        <outlet property="scrollView" destination="k2H-wZ-bpH" id="V9c-l1-CEK"/>
+                        <outlet property="submitButton" destination="RCB-wz-p7B" id="Ti6-Cp-aTz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="69" y="-27"/>
+            <point key="canvasLocation" x="67.938931297709928" y="-27.464788732394368"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

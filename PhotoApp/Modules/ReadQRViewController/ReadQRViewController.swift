@@ -12,22 +12,30 @@ import SVProgressHUD
 final class ReadQRViewController: UIViewController {
     
     private let session = AVCaptureSession()
+    
+    
 
     @IBOutlet private weak var caputureView: UIView!
     @IBOutlet private weak var prescriptionLabel: UILabel!
     @IBOutlet private weak var submitButton: UIButton!
     @IBOutlet private weak var titleLabel: UILabel!
     
+    @IBOutlet weak var tutorialLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpCamera()
         setUpViews()
+        
+        SVProgressHUD.setBackgroundColor(UIColor.init(hex: "f1f1f1"))
+
         
     }
     
     private func setUpViews() {
         submitButton.addTarget(nil, action: #selector(submitButtonPressed), for: .touchUpInside)
         hideViews(isHidden: true)
+        self.navigationItem.title = "QR読み込み"
     }
     
     @objc
@@ -35,10 +43,13 @@ final class ReadQRViewController: UIViewController {
         SVProgressHUD.show(withStatus: "送信中")
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             SVProgressHUD.showSuccess(withStatus: "送信完了")
-            let vc = SelectInterviewDateViewController.loadStoryboard()
-            self.navigationController?.pushViewController(vc, animated: true)
+
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 SVProgressHUD.dismiss()
+                
+                self.showReserveAlert()
+                
+
             }
         }
     }
@@ -47,6 +58,23 @@ final class ReadQRViewController: UIViewController {
         titleLabel.isHidden = isHidden
         prescriptionLabel.isHidden = isHidden
         submitButton.isHidden = isHidden
+        tutorialLabel.isHidden = !isHidden
+    }
+    
+    private func showReserveAlert() {
+        let alert = UIAlertController(title: "続けて面談日程を予約しますか？", message: nil, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "はい", style: .default) { (action) in
+            self.dismiss(animated: true, completion: nil)
+            let vc = SelectInterviewDateViewController.loadStoryboard()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        let cancel = UIAlertAction(title: "いいえ", style: .cancel) { (acrion) in
+            self.dismiss(animated: true, completion: nil)
+        }
+        alert.addAction(ok)
+        alert.addAction(cancel)
+
+        self.present(alert, animated: true, completion: nil)
     }
 
 }
@@ -57,11 +85,11 @@ final class ReadQRViewController: UIViewController {
 extension ReadQRViewController: AVCaptureMetadataOutputObjectsDelegate {
     
     private func setUpCamera() {
-        
-        SVProgressHUD.showSuccess(withStatus: "処方箋のQRを読み込んでください。")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            SVProgressHUD.dismiss()
-        }
+                
+//        SVProgressHUD.show(withStatus: "処方箋のQRを読み込んでください。")
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//            SVProgressHUD.dismiss()
+//        }
         
         //TODO: ここlabelでいい
         

@@ -9,17 +9,32 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--探す-->
+        <!--ホーム-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="PhotoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ホーム画面" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bJE-vk-MaN">
+                                <rect key="frame" x="25" y="73" width="212" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="2nv-VU-XfF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="42"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bJE-vk-MaN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="7Nc-Ip-H7u"/>
+                            <constraint firstItem="bJE-vk-MaN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="kuh-uj-83Q"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="探す" image="magnifyingglass" catalog="system" id="Uwj-8T-PcG">
+                    <tabBarItem key="tabBarItem" title="ホーム" image="homekit" catalog="system" selectedImage="homekit" id="Uwj-8T-PcG">
                         <color key="badgeColor" red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="D0T-Kh-X41"/>
@@ -39,8 +54,9 @@
                         <color key="backgroundColor" red="0.86774104833602905" green="0.95083743333816528" blue="0.98464232683181763" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="RLk-SR-RKw"/>
-                        <segue destination="pZd-nY-XNs" kind="relationship" relationship="viewControllers" id="sIv-xT-vJx"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="ziF-8Z-7EG"/>
+                        <segue destination="pZd-nY-XNs" kind="relationship" relationship="viewControllers" id="IV7-xb-pmk"/>
+                        <segue destination="BCI-UN-3WJ" kind="relationship" relationship="viewControllers" id="BZ3-cq-FaL"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c36-TO-7hZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -64,7 +80,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="処方内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yk-kr-S8i">
-                                <rect key="frame" x="10" y="242" width="170" height="100"/>
+                                <rect key="frame" x="10" y="192" width="170" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="g2E-PL-at6"/>
                                 </constraints>
@@ -73,13 +89,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htw-tr-RXt">
-                                <rect key="frame" x="10" y="392" width="394" height="0.0"/>
+                                <rect key="frame" x="10" y="342" width="394" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGQ-YD-Bdz">
-                                <rect key="frame" x="107" y="492" width="200" height="100"/>
+                                <rect key="frame" x="107" y="442" width="200" height="100"/>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="L8W-zf-Pje"/>
@@ -91,6 +107,16 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="処方箋のQRを読み込んでください" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7K-jl-rvo">
+                                <rect key="frame" x="0.0" y="713" width="414" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="znN-ud-KgK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yO1-0n-2Va"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -98,12 +124,15 @@
                             <constraint firstItem="SGQ-YD-Bdz" firstAttribute="centerX" secondItem="6zB-12-eWa" secondAttribute="centerX" id="6Wk-yl-sYq"/>
                             <constraint firstItem="SGQ-YD-Bdz" firstAttribute="top" secondItem="Htw-tr-RXt" secondAttribute="bottom" constant="100" id="Gj0-Qt-8bR"/>
                             <constraint firstItem="Htw-tr-RXt" firstAttribute="leading" secondItem="yO1-0n-2Va" secondAttribute="leading" constant="10" id="KjB-He-OlP"/>
-                            <constraint firstItem="1yk-kr-S8i" firstAttribute="top" secondItem="yO1-0n-2Va" secondAttribute="top" constant="150" id="OeU-fY-CcG"/>
+                            <constraint firstItem="1yk-kr-S8i" firstAttribute="top" secondItem="yO1-0n-2Va" secondAttribute="top" constant="100" id="OeU-fY-CcG"/>
                             <constraint firstItem="Htw-tr-RXt" firstAttribute="top" secondItem="1yk-kr-S8i" secondAttribute="bottom" constant="50" id="V7k-lb-GJ5"/>
+                            <constraint firstItem="w7K-jl-rvo" firstAttribute="trailing" secondItem="yO1-0n-2Va" secondAttribute="trailing" id="YRq-gg-Agt"/>
+                            <constraint firstItem="yO1-0n-2Va" firstAttribute="bottom" secondItem="w7K-jl-rvo" secondAttribute="bottom" id="cPI-yI-SmG"/>
                             <constraint firstItem="yO1-0n-2Va" firstAttribute="trailing" secondItem="Htw-tr-RXt" secondAttribute="trailing" constant="10" id="hgY-nK-eLd"/>
                             <constraint firstItem="b3y-Qe-RwO" firstAttribute="top" secondItem="yO1-0n-2Va" secondAttribute="top" id="iJH-fo-M29"/>
                             <constraint firstItem="1yk-kr-S8i" firstAttribute="leading" secondItem="yO1-0n-2Va" secondAttribute="leading" constant="10" id="pJP-zd-yJ4"/>
                             <constraint firstItem="b3y-Qe-RwO" firstAttribute="leading" secondItem="yO1-0n-2Va" secondAttribute="leading" id="rVR-Kp-8cS"/>
+                            <constraint firstItem="w7K-jl-rvo" firstAttribute="leading" secondItem="yO1-0n-2Va" secondAttribute="leading" id="v43-G3-6XQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BrG-Yk-6Sr"/>
@@ -112,17 +141,49 @@
                         <outlet property="prescriptionLabel" destination="Htw-tr-RXt" id="r2X-Qg-Nec"/>
                         <outlet property="submitButton" destination="SGQ-YD-Bdz" id="arq-mn-iBY"/>
                         <outlet property="titleLabel" destination="1yk-kr-S8i" id="fZp-Qn-i6F"/>
+                        <outlet property="tutorialLabel" destination="w7K-jl-rvo" id="o0c-UM-X07"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e0V-sJ-Q0k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1776.8115942028987" y="795.53571428571422"/>
         </scene>
+        <!--予約履歴-->
+        <scene sceneID="oEJ-sS-KMR">
+            <objects>
+                <viewController id="BCI-UN-3WJ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ljz-I5-8qK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="予約履歴" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIP-rC-phl">
+                                <rect key="frame" x="25" y="73" width="169.5" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="H19-6w-QhO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="42"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NQG-9J-zmw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IIP-rC-phl" firstAttribute="leading" secondItem="NQG-9J-zmw" secondAttribute="leading" constant="25" id="Ypy-0M-8LX"/>
+                            <constraint firstItem="IIP-rC-phl" firstAttribute="top" secondItem="NQG-9J-zmw" secondAttribute="top" constant="25" id="iJx-VW-UaB"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="予約履歴" image="list.bullet.clipboard" catalog="system" id="pFZ-2l-g20"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="raK-MT-Fa0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32" y="796"/>
+        </scene>
         <!--QR読み込み-->
         <scene sceneID="DSc-yT-daT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pZd-nY-XNs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="QR読み込み" selectedImage="camera" catalog="system" id="qbE-Q0-6Da">
+                    <tabBarItem key="tabBarItem" title="QR読み込み" image="camera" catalog="system" selectedImage="camera" id="qbE-Q0-6Da">
                         <color key="badgeColor" systemColor="systemTealColor"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -142,15 +203,13 @@
     </scenes>
     <resources>
         <image name="camera" catalog="system" width="128" height="93"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="homekit" catalog="system" width="128" height="104"/>
+        <image name="list.bullet.clipboard" catalog="system" width="103" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="tertiarySystemGroupedBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

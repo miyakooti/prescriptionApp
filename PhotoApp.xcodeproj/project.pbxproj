@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		C249FA322A95FB1A0057A4B2 /* SelectInterviewDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C249FA312A95FB1A0057A4B2 /* SelectInterviewDateViewController.swift */; };
 		C249FA342A95FB310057A4B2 /* SelectInterviewDateViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C249FA332A95FB310057A4B2 /* SelectInterviewDateViewController.storyboard */; };
+		C249FA372A9627A50057A4B2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C249FA362A9627A50057A4B2 /* HomeViewController.swift */; };
+		C249FA392A9627B60057A4B2 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C249FA382A9627B60057A4B2 /* HomeViewController.storyboard */; };
+		C249FA3C2A962E920057A4B2 /* PickDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C249FA3A2A962E920057A4B2 /* PickDateTableViewCell.swift */; };
+		C249FA3D2A962E920057A4B2 /* PickDateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C249FA3B2A962E920057A4B2 /* PickDateTableViewCell.xib */; };
+		C249FA402A962F400057A4B2 /* ReservationSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = C249FA3F2A962F400057A4B2 /* ReservationSlot.swift */; };
 		D1393F2C285EBEBC0073981D /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1393F2B285EBEBC0073981D /* Config.swift */; };
 		D1393F2E285ECA9C0073981D /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1393F2D285ECA9C0073981D /* NotificationName.swift */; };
 		D1393F35285ECEB80073981D /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1393F34285ECEB80073981D /* String.swift */; };
@@ -31,6 +36,11 @@
 		B739303C93D23C3FBE6FF173 /* Pods_PhotoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C249FA312A95FB1A0057A4B2 /* SelectInterviewDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectInterviewDateViewController.swift; sourceTree = "<group>"; };
 		C249FA332A95FB310057A4B2 /* SelectInterviewDateViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectInterviewDateViewController.storyboard; sourceTree = "<group>"; };
+		C249FA362A9627A50057A4B2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C249FA382A9627B60057A4B2 /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
+		C249FA3A2A962E920057A4B2 /* PickDateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickDateTableViewCell.swift; sourceTree = "<group>"; };
+		C249FA3B2A962E920057A4B2 /* PickDateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickDateTableViewCell.xib; sourceTree = "<group>"; };
+		C249FA3F2A962F400057A4B2 /* ReservationSlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationSlot.swift; sourceTree = "<group>"; };
 		D1393F2B285EBEBC0073981D /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		D1393F2D285ECA9C0073981D /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		D1393F34285ECEB80073981D /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -76,8 +86,27 @@
 			children = (
 				C249FA312A95FB1A0057A4B2 /* SelectInterviewDateViewController.swift */,
 				C249FA332A95FB310057A4B2 /* SelectInterviewDateViewController.storyboard */,
+				C249FA3E2A962E980057A4B2 /* PickDateCell */,
 			);
 			path = SelectInterviewDate;
+			sourceTree = "<group>";
+		};
+		C249FA352A9627850057A4B2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C249FA362A9627A50057A4B2 /* HomeViewController.swift */,
+				C249FA382A9627B60057A4B2 /* HomeViewController.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C249FA3E2A962E980057A4B2 /* PickDateCell */ = {
+			isa = PBXGroup;
+			children = (
+				C249FA3A2A962E920057A4B2 /* PickDateTableViewCell.swift */,
+				C249FA3B2A962E920057A4B2 /* PickDateTableViewCell.xib */,
+			);
+			path = PickDateCell;
 			sourceTree = "<group>";
 		};
 		D1393F41285F07520073981D /* MainTabBar */ = {
@@ -132,6 +161,7 @@
 		D1D8F631285DDFFA00D66146 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				C249FA3F2A962F400057A4B2 /* ReservationSlot.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -148,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				D1393F2B285EBEBC0073981D /* Config.swift */,
+				C249FA352A9627850057A4B2 /* Home */,
 				D1D8F634285DE02F00D66146 /* Launch */,
 				D1393F41285F07520073981D /* MainTabBar */,
 				D1D8F62F285DDFC900D66146 /* ReadQRViewController */,
@@ -253,6 +284,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C249FA3D2A962E920057A4B2 /* PickDateTableViewCell.xib in Resources */,
+				C249FA392A9627B60057A4B2 /* HomeViewController.storyboard in Resources */,
 				D13FA82328581A9F0041FCD0 /* LaunchScreen.storyboard in Resources */,
 				C249FA342A95FB310057A4B2 /* SelectInterviewDateViewController.storyboard in Resources */,
 				D13FA82028581A9F0041FCD0 /* Assets.xcassets in Resources */,
@@ -315,12 +348,15 @@
 				D1D8F644285DE46B00D66146 /* NSObject.swift in Sources */,
 				D1393F35285ECEB80073981D /* String.swift in Sources */,
 				D1393F40285EFD9F0073981D /* UIColor.swift in Sources */,
+				C249FA3C2A962E920057A4B2 /* PickDateTableViewCell.swift in Sources */,
 				D1393F2C285EBEBC0073981D /* Config.swift in Sources */,
 				D13FA81728581A9D0041FCD0 /* AppDelegate.swift in Sources */,
 				C249FA322A95FB1A0057A4B2 /* SelectInterviewDateViewController.swift in Sources */,
 				D13FA81928581A9D0041FCD0 /* SceneDelegate.swift in Sources */,
 				D1D8F648285DEA0000D66146 /* UIViewControllerExtension.swift in Sources */,
+				C249FA372A9627A50057A4B2 /* HomeViewController.swift in Sources */,
 				D1393F37285ED1E90073981D /* UIImageView.swift in Sources */,
+				C249FA402A962F400057A4B2 /* ReservationSlot.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
