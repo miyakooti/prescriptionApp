@@ -38,7 +38,7 @@ final class ReadQRViewController: UIViewController {
     @objc
     private func switchTab() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            self.tabBarController?.selectedIndex = 0
+            self.tabBarController?.selectedIndex = 2
         }
     }
 
